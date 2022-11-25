@@ -8,18 +8,8 @@
  * @returns {number}
  */
 export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
-  let min = 0;
-  let max = 0;
-
-  if(minFirst > minSecond) {
-    min = minSecond;
-  } else
-    min = minFirst;
-
-  if(maxFirst > maxSecond) {
-    max = maxFirst;
-  } else
-    max = maxSecond;
+  const min = Math.min(minFirst, minSecond);
+  const max = Math.max(maxFirst,maxSecond);
 
   return min * max;
 };
@@ -32,9 +22,7 @@ export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
  * @returns {number}
  */
 export const getSquareOfCircle = (radius) => {
-  let squareCircle = 0;
-  squareCircle = Math.PI * Math.pow(radius, 2);
-  return squareCircle;
+  return Math.PI * Math.pow(radius, 2);
 };
 
 /**
@@ -58,8 +46,7 @@ export const getFixedValue = (number, accuracy) => {
 export const getFlooroCeil = (number) => {
   if(Math.floor(number) % 2 === 0) {
     return Math.floor(number);
-  }
-  if(Math.floor(number) % 2 !== 0) {
+  } else {
     return Math.ceil(number);
   }
 };
